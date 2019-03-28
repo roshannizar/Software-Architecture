@@ -28,7 +28,7 @@ public class Emirates implements Flight {
 		
 		this.destination = Destination(varDestination);
 		
-		System.out.println("Your Price for this booking is: "+Price(flightName,this.classType,this.destination));
+		System.out.println("Your Price for this booking is: "+Price(this.classType,this.destination));
 	}
 	
 	@Override
@@ -52,7 +52,7 @@ public class Emirates implements Flight {
 	}
 	
 	@Override
-	public double Price(String flightName,double classType,String destination) {
+	public double Price(double classType,String destination) {
 		
 		double price;
 				
