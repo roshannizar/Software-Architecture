@@ -17,9 +17,10 @@ public class ProducerActivator implements BundleActivator {
 		sc= new Scanner(System.in);
 		Flight publisherService;
 	
-		System.out.println("Flight Booking");
-		System.out.println("1. Emirates\n2. Sri Lankan Air Lines\n3. King Fisher\n4. Air Asia");
-		System.out.println("Select your pefered flight id: ");
+		System.out.println("Flight Booking\n");
+		System.out.println("----------------------");
+		System.out.println("1. Emirates\n2. Sri Lankan Air Lines\n3. King Fisher\n4. Air Asia\n");
+		System.out.println("Select your prefered Flight Id: \n");
 		
 		flightType = sc.nextInt();
 		

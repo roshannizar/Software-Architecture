@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: ServiceSubscriber
+Bundle-Name: Consumer
 Bundle-SymbolicName: Consumer
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.consumer.ConsumerActivator
