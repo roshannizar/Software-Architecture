@@ -1,19 +1,20 @@
-package servicesubscriber;
+package com.consumer;
 
-import com.mtit.service.ServicePublish;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
-public class ServiceActivator implements BundleActivator {
+import com.producer.Flight;
+
+public class ConsumerActivator implements BundleActivator {
 
 	ServiceReference serviceReference;
 	
 	public void start(BundleContext bundleContext) throws Exception {
 		System.out.println("Start Subscriber Service");
-		serviceReference = bundleContext.getServiceReference(ServicePublish.class.getName());
-		ServicePublish servicePublish = (ServicePublish) bundleContext.getService(serviceReference);
-		servicePublish.publishService();
+		serviceReference = bundleContext.getServiceReference(Flight.class.getName());
+		Flight servicePublish = (Flight) bundleContext.getService(serviceReference);
+		servicePublish.FlightService();
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {

@@ -1,4 +1,4 @@
-package com.mtit.service;
+package com.producer;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 
-public class ServiceActivator implements BundleActivator {
+public class ProducerActivator implements BundleActivator {
 
 	private Scanner sc;
 	private int flightType;
@@ -15,7 +15,7 @@ public class ServiceActivator implements BundleActivator {
 	public void start(BundleContext bundleContext) throws Exception {
 		System.out.println("Publisher Start");
 		sc= new Scanner(System.in);
-		ServicePublish publisherService;
+		Flight publisherService;
 	
 		System.out.println("Flight Booking");
 		System.out.println("1. Emirates\n2. Sri Lankan Air Lines\n3. King Fisher\n4. Air Asia");
@@ -33,7 +33,7 @@ public class ServiceActivator implements BundleActivator {
 			default: publisherService = new Emirates();
 		}
 		
-		publishServiceRegistration = bundleContext.registerService(ServicePublish.class.getName(), publisherService, null);
+		publishServiceRegistration = bundleContext.registerService(Flight.class.getName(), publisherService, null);
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
