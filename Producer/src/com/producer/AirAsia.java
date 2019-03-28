@@ -86,7 +86,7 @@ public class AirAsia implements Flight{
 			case 1: dest = "London";
 						   break;
 						   
-			case 2: dest = "Austrailia";
+			case 2: dest = "Australia";
 			               break;
 			               
 			case 3: dest = "Dubai";
