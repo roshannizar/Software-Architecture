@@ -9,8 +9,9 @@ public class AirAsia implements Flight{
 	private String destination;
 	private String duration;
 	private Scanner sc;
+	
 	@Override
-	public void FlightService() {
+	public void getFlightService() {
 		
 		int varType,varDestination;
 		
@@ -20,26 +21,26 @@ public class AirAsia implements Flight{
 		System.out.println("1. A\n2. B\n3. C\n4. D");
 		varType = sc.nextInt();
 		
-		this.classType = ClassType(varType);
+		this.classType = getClassType(varType);
 		
 		System.out.println("Select a destination: ");
 		System.out.println("1. London\n2. Austrailia\n3. Dubai\n4. America");
 		varDestination = sc.nextInt();
 		
-		this.destination = Destination(varDestination);
+		this.destination = getDestination(varDestination);
 		
-		System.out.println("Your Price for this booking is: "+Price(this.classType,this.destination));
+		System.out.println("Your Price for this booking is: "+getAmount(this.classType,this.destination) + " and duration will be "+getDuration(this.flightName));
 	}
 
 	@Override
-	public double ClassType(int type) {
+	public double getClassType(int type) {
 
 		double value;
 		
 		switch(type) {
 			case 1: value = 30;
 			          break;
-			case 2: value = 25;
+			case 2: value = 20;
 			          break;
 			case 3: value = 15;
 					  break;
@@ -53,21 +54,21 @@ public class AirAsia implements Flight{
 	}
 	
 	@Override
-	public double Price(double classType, String destination) {
+	public double getAmount(double classType, String destination) {
 
 		double price;
 		
 		switch(destination) {
-			case "London": price = classType * 50000;
+			case "London": price = classType * 35000;
 					       break;
 					     
-			case "Australia": price = classType * 120000;
+			case "Australia": price = classType * 90000;
 					          break;
 					     
-			case "Dubai": price = classType * 135000;
+			case "Dubai": price = classType * 120000;
 					      break;
 					     
-			case "America": price = classType * 145000;
+			case "America": price = classType * 135000;
 					        break;
 					     
 		    default: price = 0;
@@ -78,7 +79,7 @@ public class AirAsia implements Flight{
 	}
 	
 	@Override
-	public String Destination(int destination) {
+	public String getDestination(int destination) {
 		String dest = "";
 		
 		switch(destination) {
@@ -100,5 +101,10 @@ public class AirAsia implements Flight{
 		}
 		
 		return dest;
+	}
+	
+	@Override
+	public String getDuration(String flightName) {
+		return "4 Hours";
 	}
 }

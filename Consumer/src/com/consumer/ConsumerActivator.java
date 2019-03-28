@@ -11,14 +11,14 @@ public class ConsumerActivator implements BundleActivator {
 	ServiceReference serviceReference;
 	
 	public void start(BundleContext bundleContext) throws Exception {
-		System.out.println("Start Subscriber Service");
+		System.out.println("Start Consumer Service");
 		serviceReference = bundleContext.getServiceReference(Flight.class.getName());
 		Flight servicePublish = (Flight) bundleContext.getService(serviceReference);
-		servicePublish.FlightService();
+		servicePublish.getFlightService();
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
-		System.out.println("Good Bye !!!");
+		System.out.println("Thank you for using our service!");
 		bundleContext.ungetService(serviceReference);
 	}
 

@@ -11,7 +11,8 @@ public class Emirates implements Flight {
 	private Scanner sc;
 	
 	@Override 
-	public void FlightService() {
+	public void getFlightService() {
+		
 		int varType,varDestination;
 		
 		sc = new Scanner(System.in);
@@ -20,19 +21,19 @@ public class Emirates implements Flight {
 		System.out.println("1. A\n2. B\n3. C\n4. D");
 		varType = sc.nextInt();
 		
-		this.classType = ClassType(varType);
+		this.classType = getClassType(varType);
 		
 		System.out.println("Select a destination: ");
 		System.out.println("1. London\n2. Austrailia\n3. Dubai\n4. America");
 		varDestination = sc.nextInt();
 		
-		this.destination = Destination(varDestination);
+		this.destination = getDestination(varDestination);
 		
-		System.out.println("Your Price for this booking is: "+Price(this.classType,this.destination));
+		System.out.println("Your Price for this booking is: "+getAmount(this.classType,this.destination) + " and duration will be "+getDuration(this.flightName));
 	}
 	
 	@Override
-	public double ClassType(int type) {
+	public double getClassType(int type) {
 		
 		double value;
 		
@@ -52,7 +53,7 @@ public class Emirates implements Flight {
 	}
 	
 	@Override
-	public double Price(double classType,String destination) {
+	public double getAmount(double classType,String destination) {
 		
 		double price;
 				
@@ -76,7 +77,7 @@ public class Emirates implements Flight {
 	}
 	
 	@Override
-	public String Destination(int destination) {
+	public String getDestination(int destination) {
 		String dest = "";
 		
 		switch(destination) {
@@ -97,5 +98,10 @@ public class Emirates implements Flight {
 			                break;
 		}
 		return dest;
+	}
+	
+	@Override 
+	public String getDuration(String flightName) {
+		return "5 Hours";
 	}
 }

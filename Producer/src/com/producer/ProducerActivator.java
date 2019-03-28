@@ -13,7 +13,7 @@ public class ProducerActivator implements BundleActivator {
 	ServiceRegistration publishServiceRegistration;
 
 	public void start(BundleContext bundleContext) throws Exception {
-		System.out.println("Publisher Start");
+		System.out.println("Producer Start");
 		sc= new Scanner(System.in);
 		Flight publisherService;
 	
@@ -26,9 +26,9 @@ public class ProducerActivator implements BundleActivator {
 		switch(flightType) {
 		
 			case 1: publisherService = new Emirates();
-							 break;
+					break;
 			case 4: publisherService = new AirAsia();
-							 break;
+					break;
 			
 			default: publisherService = new Emirates();
 		}
@@ -37,7 +37,7 @@ public class ProducerActivator implements BundleActivator {
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
-		System.out.println("Publisher Stop");
+		System.out.println("Producer Stop!");
 		publishServiceRegistration.unregister();
 	}
 
