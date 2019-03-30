@@ -103,4 +103,9 @@ public class KingFisher implements Flight {
 	public String getDuration(String flightName) {
 		return "4 Hours";
 	}
+
+	@Override
+	public double sendAmount() {
+		return this.getAmount(this.classType, this.destination);
+	}
 }
