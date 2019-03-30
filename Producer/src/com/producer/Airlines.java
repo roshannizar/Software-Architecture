@@ -16,13 +16,13 @@ public class Airlines implements Flight{
 		sc = new Scanner(System.in);
 		
 		System.out.println("\nSelect a class type: \n");
-		System.out.print("1. A\n2. B\n3. C\n4. D");
+		System.out.print("1. A\n2. B\n3. C\n4. D\n");
 		varType = sc.nextInt();
 		
 		this.classType = getClassType(varType);
 		
 		System.out.println("Select a destination: ");
-		System.out.print("1. London\n2. Austrailia\n3. Dubai\n4. America");
+		System.out.print("1. London\n2. Austrailia\n3. Dubai\n4. America\n");
 		varDestination = sc.nextInt();
 		
 		this.destination = getDestination(varDestination);
