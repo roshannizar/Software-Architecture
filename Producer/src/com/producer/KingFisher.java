@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class KingFisher implements Flight {
 	
-	private String flightName = "Kingfisher";
 	private double classType;
 	private String destination;
 	private Scanner sc;
@@ -28,7 +27,7 @@ public class KingFisher implements Flight {
 		
 		this.destination = getDestination(varDestination);
 		
-		System.out.println("Your Price for this booking is: "+getAmount(this.classType,this.destination) + " and duration will be "+getDuration(this.flightName));
+		System.out.println("Your Price for this booking is: "+getAmount(this.classType,this.destination) + " and duration will be "+getDuration(this.destination));
 	}
 	
 	@Override
@@ -100,8 +99,25 @@ public class KingFisher implements Flight {
 	}
 	
 	@Override 
-	public String getDuration(String flightName) {
-		return "4 Hours";
+	public String getDuration(String destination) {
+		
+		String hours = "";
+		
+		switch(destination) {
+			
+			case "London": hours = "8 Hours";
+						   break;
+			case "Australia": hours = "10 Hours";
+							  break;
+			case "Dubai": hours = "4 Hours";
+						  break;
+			case "America": hours= "12 Hours";
+							break;			
+			default: break;
+		
+		}
+		
+		return hours;	
 	}
 
 	@Override
