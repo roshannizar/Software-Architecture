@@ -2,14 +2,13 @@ package com.producer;
 
 import java.util.Scanner;
 
-public class Emirates implements Flight {
+public class Emirates implements Flight{
 	
-	private String flightName = "Estimates";
 	private double classType;
 	private String destination;
 	private Scanner sc;
 	
-	@Override 
+	@Override
 	public void getFlightService() {
 		
 		int varType,varDestination;
@@ -28,7 +27,13 @@ public class Emirates implements Flight {
 		
 		this.destination = getDestination(varDestination);
 		
-		System.out.println("Your Price for this booking is: "+getAmount(this.classType,this.destination) + " and duration will be "+getDuration(this.flightName));
+		System.out.println("Your Price for this booking is: "+getAmount(this.classType,this.destination) + " and duration will be "+getDuration(this.destination));
+		
+	}
+	
+	@Override
+	public double sendAmount() {
+		return getAmount(this.classType,this.destination);
 	}
 	
 	@Override
@@ -99,8 +104,25 @@ public class Emirates implements Flight {
 		return dest;
 	}
 	
-	@Override 
-	public String getDuration(String flightName) {
-		return "5 Hours";
+	@Override
+	public String getDuration(String destination) {
+		
+		String hours = "";
+		
+		switch(destination) {
+			
+			case "London": hours = "8 Hours";
+						   break;
+			case "Australia": hours = "10 Hours";
+							  break;
+			case "Dubai": hours = "4 Hours";
+						  break;
+			case "America": hours="12 Hours";
+							break;			
+			default: break;
+		
+		}
+		
+		return hours;	
 	}
 }

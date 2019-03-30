@@ -7,5 +7,5 @@ public interface Flight {
 	public double getAmount(double classType, String destination);
 	public String getDestination(int destnation);
 	public String getDuration(String flightName);
-	
+	public double sendAmount();
 }
