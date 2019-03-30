@@ -28,6 +28,8 @@ public class ProducerActivator implements BundleActivator {
 		
 			case 1: publisherService = new Emirates();
 					break;
+			case 2: publisherService = new Airlines();
+					break;
 			case 3: publisherService = new KingFisher();
 					break;
 			case 4: publisherService = new AirAsia();
