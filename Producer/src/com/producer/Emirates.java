@@ -82,6 +82,7 @@ public class Emirates implements Flight{
 	
 	@Override
 	public String getDestination(int destination) {
+		
 		String dest = "";
 		
 		switch(destination) {

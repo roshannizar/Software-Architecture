@@ -84,6 +84,7 @@ public class AirAsia implements Flight{
 	
 	@Override
 	public String getDestination(int destination) {
+		
 		String dest = "";
 		
 		switch(destination) {
@@ -120,7 +121,7 @@ public class AirAsia implements Flight{
 							  break;
 			case "Dubai": hours = "4 Hours";
 						  break;
-			case "America": hours="12 Hours";
+			case "America": hours= "12 Hours";
 							break;			
 			default: break;
 		
