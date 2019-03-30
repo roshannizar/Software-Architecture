@@ -117,7 +117,7 @@ public class Emirates implements Flight{
 							  break;
 			case "Dubai": hours = "4 Hours";
 						  break;
-			case "America": hours="12 Hours";
+			case "America": hours= "12 Hours";
 							break;			
 			default: break;
 		
