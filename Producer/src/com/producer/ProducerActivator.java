@@ -46,7 +46,7 @@ public class ProducerActivator implements BundleActivator {
 			break;
 
 		default:
-			publisherService = new Emirates();
+			publisherService = null;
 		}
 
 		publishServiceRegistration = bundleContext.registerService(Flight.class.getName(), publisherService, null);

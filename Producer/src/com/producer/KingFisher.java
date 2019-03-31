@@ -19,15 +19,30 @@ public class KingFisher implements Flight {
 		System.out.println("1. A\n2. B\n3. C\n4. D\n");
 		varType = sc.nextInt();
 		
+		while (varType < 1 || varType > 4) {
+			System.out.println("\nSelect a valid class type: \n");
+			System.out.println("1. A\n2. B\n3. C\n4. D \n");
+			varType = sc.nextInt();
+		}
+		
 		this.classType = getClassType(varType);
 		
 		System.out.println("\nSelect a destination: \n");
 		System.out.println("1. London\n2. Austrailia\n3. Dubai\n4. America\n");
 		varDestination = sc.nextInt();
 		
+		while (varDestination < 1 || varDestination > 4) {
+			System.out.println("\nSelect a valid destination: \n");
+			System.out.println("1. London\n2. Australia\n3. Dubai\n4. America \n");
+			varDestination = sc.nextInt();
+		}
+		
 		this.destination = getDestination(varDestination);
 		
-		System.out.println("Your Price for this booking is: "+getAmount(this.classType,this.destination) + " and duration will be "+getDuration(this.destination));
+		System.out.println("\nYour Price for this booking is: "+getAmount(this.classType,this.destination) + " and duration will be "+getDuration(this.destination)+"\n\n");
+		System.out.println("---------  Flight Booking --------------\n");
+		System.out.println("Destination : "+this.destination +"\nPrice : "+getAmount(this.classType,this.destination) +"\nDuration : "+getDuration(this.destination) );
+		System.out.println("\n---------  Thank You for Using Our System. --------------");
 	}
 	
 	@Override
