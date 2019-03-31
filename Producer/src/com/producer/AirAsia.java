@@ -16,7 +16,11 @@ public class AirAsia implements Flight{
 		sc = new Scanner(System.in);
 		
 		System.out.println("\nSelect a class type: \n");
+<<<<<<< HEAD
 		System.out.println("1. A\n2. B\n3. C\n4. D \n");
+=======
+		System.out.print("1. A\n2. B\n3. C\n4. D\n");
+>>>>>>> e4a6ea5928710be08efa1fcc2a41951e17628251
 		varType = sc.nextInt();
 		
 		while (varType < 1 || varType > 4) {
@@ -27,8 +31,13 @@ public class AirAsia implements Flight{
 		
 		this.classType = getClassType(varType);
 		
+<<<<<<< HEAD
 		System.out.println("Select a destination: \n");
 		System.out.println("1. London\n2. Australia\n3. Dubai\n4. America \n");
+=======
+		System.out.println("Select a destination: ");
+		System.out.print("1. London\n2. Austrailia\n3. Dubai\n4. America\n");
+>>>>>>> e4a6ea5928710be08efa1fcc2a41951e17628251
 		varDestination = sc.nextInt();
 		System.out.println("Select a valid destination: \n");
 		System.out.println("1. London\n2. Australia\n3. Dubai\n4. America \n");
